@@ -61,7 +61,7 @@ this.roomadd();
                   date.getUTCFullYear(),
                   date.getUTCMonth(),
                   date.getUTCDate(),
-                  date.getHours() - 2,
+                  date.getHours() - 1,
                   date.getMinutes()
                 )
               );

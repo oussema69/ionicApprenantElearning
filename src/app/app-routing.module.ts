@@ -4,8 +4,8 @@ import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import {VisioComponent} from './component/visio/visio.component';
 import {RoomComponent} from './component/room/room.component';
-import {ProfileComponent} from "./component/profile/profile.component";
-import {StatistiqueComponent} from "./component/statistique/statistique.component";
+import {ProfileComponent} from './component/profile/profile.component';
+import {StatistiqueComponent} from './component/statistique/statistique.component';
 
 const routes: Routes = [
   {
@@ -31,7 +31,7 @@ const routes: Routes = [
     path: 'stat',
     component: StatistiqueComponent,
   },
-    ]
+    ],
   },
   {
     path: '',

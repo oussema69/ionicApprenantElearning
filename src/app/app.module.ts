@@ -15,10 +15,11 @@ import {PipesModule} from 'pipes-module';
 import {CommonModule} from '@angular/common';
 import { SecurityPipe } from './pipes/security.pipe';
 import {NavbarComponent} from './component/navbar/navbar.component';
-import {NgCalendarModule} from "ionic2-calendar";
+import {NgCalendarModule} from 'ionic2-calendar';
+import {HeadersComponent} from './component/headers/headers.component';
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,],
+  declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,HeadersComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     BrowserModule,
