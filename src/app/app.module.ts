@@ -17,9 +17,11 @@ import { SecurityPipe } from './pipes/security.pipe';
 import {NavbarComponent} from './component/navbar/navbar.component';
 import {NgCalendarModule} from 'ionic2-calendar';
 import {HeadersComponent} from './component/headers/headers.component';
+import {NotificationsComponent} from './component/notifications/notifications.component';
+import {ProfileComponent} from "./component/profile/profile.component";
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,HeadersComponent],
+  declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,HeadersComponent,NotificationsComponent,ProfileComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     BrowserModule,

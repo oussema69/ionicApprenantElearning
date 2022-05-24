@@ -6,6 +6,7 @@ import {VisioComponent} from './component/visio/visio.component';
 import {RoomComponent} from './component/room/room.component';
 import {ProfileComponent} from './component/profile/profile.component';
 import {StatistiqueComponent} from './component/statistique/statistique.component';
+import {NotificationsComponent} from "./component/notifications/notifications.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
   },
+      {
+        path:'notif',
+        component:NotificationsComponent
+      },
       {
     path: 'stat',
     component: StatistiqueComponent,

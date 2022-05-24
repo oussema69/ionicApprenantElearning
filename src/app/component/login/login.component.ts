@@ -30,10 +30,7 @@ export class LoginComponent  {
     this.initForm();
   }
 
-  goto(){
-    this.router.navigate(['signup']);
-    localStorage.removeItem('token');
-  }
+
   initForm() {
     this.form1 = new FormGroup({
       email: new FormControl('',

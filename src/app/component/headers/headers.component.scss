@@ -8,9 +8,20 @@ ion-header{
 
   }
   ion-icon {
+
     border: 1px solid rgba(255, 95, 31, 0.2);
     border-radius: 50px;
-    padding: 7px;
+    padding: 15px;
+
     background: linear-gradient(315deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 125, 81, 0.2) 74%);
   }
+}
+.logout{
+  margin-left: 87%;
+  margin-top: 1%;
+}
+.notif{
+  margin-left: 50%;
+  margin-top: -30%;
+
 }

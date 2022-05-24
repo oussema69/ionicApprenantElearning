@@ -48,12 +48,10 @@ this.roomadd();
         this.service.getRoomById(i, this.room).subscribe(
           res => {
             this.room.push(res.room);
-          console.log('ya7beny',res.room.settings.duration.valueOf());
 //add events
 
             const date = new Date(res.room.settings.scheduled_time);
-            console.log('mochny',date);
-            console.log((date.getMinutes())+date.getHours());
+
             let startTime;
             let endTime;
               startTime = new Date(
@@ -100,10 +98,12 @@ this.roomadd();
 //--------------------------
   next() {
     this.myCal.slideNext();
+    this.roomadd();
   }
 
   back() {
     this.myCal.slidePrev();
+    this.roomadd();
   }
 
   // Selected date reange and hence title changed
@@ -122,11 +122,11 @@ this.roomadd();
           this.router.navigate(['home/visio/' + event.id]);
 
         }},{text:'annuler',handler:()=>{
-          console.log('le');
         }}
       ],
     });
     alert.present();
+    this.roomadd();
 
   }
   removeEvents() {

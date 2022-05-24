@@ -14,15 +14,16 @@ export class NotificationsService {
   }
   createNotifcation(data){
 
-      return this.http.post(`${'http://192.168.35.184:3000/notification'}/`,data);
+      return this.http.post(`${this.api}/`,data);
 
 
   }
   getNotifToken(id: string): Observable<Notification>{
-    return this.http.get<Notification>(`${'http://192.168.35.184:3000/notification/'}${id}`);
+    return this.http.get<Notification>(`${this.api}${id}`);
   }
   delieteNotif(id: string){
-    return this.http.delete(`${'http://192.168.35.184:3000/notification/'}${id}`);
+    return this.http.delete(`${this.api}${id}`);
   }
+
 
 }

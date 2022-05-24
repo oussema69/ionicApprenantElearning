@@ -6,8 +6,7 @@ import {
   Token,
 } from '@capacitor/push-notifications';
 import {NotificationsService} from '../../services/notifications.service';
-import jwt_decode from "jwt-decode";
-import {Notification} from "../../models/notif";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

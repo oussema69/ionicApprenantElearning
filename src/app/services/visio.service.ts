@@ -11,7 +11,7 @@ export class VisioService {
 
   constructor(private http: HttpClient) { }
   getRoomById(idR: string,data: any): Observable<any>{
-    return this.http.post(`${'http://192.168.35.184:3000/formateurs/rooms'}/${idR}`,data);
+    return this.http.post(`${this.api}/${idR}`,data);
 
   }
 }

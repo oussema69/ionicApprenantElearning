@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import jwt_decode from 'jwt-decode';
 import {Notification} from '../../models/notif';
 import {NotificationsService} from '../../services/notifications.service';
+import {NotiDetailsService} from '../../services/noti-details.service';
 
 @Component({
   selector: 'app-headers',
@@ -12,10 +13,23 @@ import {NotificationsService} from '../../services/notifications.service';
 export class HeadersComponent implements OnInit {
   notif: Notification=new Notification();
   app: any;
-  constructor(private router: Router,private Nservice: NotificationsService) { }
+  appre: any;
+  notification: any;
 
-  ngOnInit() {}
+  constructor(private router: Router,private Nservice: NotificationsService,
+              private notifDeteils: NotiDetailsService
+              ) { }
 
+  ngOnInit() {
+    const tokenuser = localStorage.getItem('mhatlioussema');
+    if (tokenuser) {
+      const decoded = jwt_decode(tokenuser);
+
+      this.appre = decoded;
+      console.log('ahawma', this.appre.data._id);
+    }
+    this.getByvisibility();
+  }
   logout() {
     const tokenuser=localStorage.getItem('mhatlioussema');
     if(tokenuser) {
@@ -34,5 +48,24 @@ this.Nservice.getNotifToken(this.app.data._id).subscribe(res=>{
     this.router.navigate(['']);
 
 
+  }
+
+  go() {
+    this.router.navigate(['home/notif']);
+
+  }
+
+  updatevis() {
+   this.notifDeteils.updateVis(this.appre.data._id).subscribe(res=>{
+     console.log('selket');
+     this.getByvisibility()
+   });
+  }
+  getByvisibility(){
+    this.notifDeteils.getByvis(this.appre.data._id).subscribe(res=>{
+      console.log('ahaya',res);
+      this.notification=res;
+      console.log('toul',this.notification.length)
+    });
   }
 }
