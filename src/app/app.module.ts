@@ -19,9 +19,15 @@ import {NgCalendarModule} from 'ionic2-calendar';
 import {HeadersComponent} from './component/headers/headers.component';
 import {NotificationsComponent} from './component/notifications/notifications.component';
 import {ProfileComponent} from "./component/profile/profile.component";
+import {FormationComponent} from "./component/formation/formation.component";
+import {ChapitreComponent} from "./component/chapitre/chapitre.component";
+import {RessourceComponent} from "./component/ressource/ressource.component";
+import { FormationPipe } from './pipes/formation.pipe';
+import { ChapitrePipe } from './pipes/chapitre.pipe';
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,HeadersComponent,NotificationsComponent,ProfileComponent],
+  declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,HeadersComponent,NotificationsComponent,ProfileComponent,FormationComponent,
+  ChapitreComponent,RessourceComponent, FormationPipe, ChapitrePipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     BrowserModule,

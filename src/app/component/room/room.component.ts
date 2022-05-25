@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {CalendarComponent} from 'ionic2-calendar';
 import {AlertController, ModalController} from '@ionic/angular';
 import {formatDate} from '@angular/common';
+import {ApprenantService} from '../../services/apprenant.service';
 
 @Component({
   selector: 'app-room',
@@ -14,6 +15,7 @@ import {formatDate} from '@angular/common';
 })
 export class RoomComponent implements OnInit {
   app: any;
+  apprenant: any;
   allRooms: any;
   room: Room[] = [];
   eventSource = [];
@@ -30,7 +32,8 @@ buttons: HTMLButtonElement;
 
   constructor(private service: VisioService, private router: Router, private alertCtrl: AlertController,
               @Inject(LOCALE_ID) private locale: string,
-              private modalCtrl: ModalController) {
+              private modalCtrl: ModalController,
+              private appservice: ApprenantService) {
   }
 
   async ngOnInit() {
@@ -41,8 +44,12 @@ this.roomadd();
     const token = localStorage.getItem('mhatlioussema');
     if (token) {
       const decoded = jwt_decode(token);
-      this.app = decoded;
-      this.allRooms = this.app.data.idR;
+      this.apprenant = decoded;
+      this.appservice.getById(this.apprenant.data._id).subscribe(
+        res=>{
+          this.app=res;
+
+      this.allRooms = this.app.idR;
       const events= [];
       for (const i of this.allRooms) {
         this.service.getRoomById(i, this.room).subscribe(
@@ -87,7 +94,8 @@ this.roomadd();
         );
       }
       this.eventSource = events;
-
+        }
+      );
 
     }
   }

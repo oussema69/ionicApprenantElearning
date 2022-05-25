@@ -7,6 +7,8 @@ import {RoomComponent} from './component/room/room.component';
 import {ProfileComponent} from './component/profile/profile.component';
 import {StatistiqueComponent} from './component/statistique/statistique.component';
 import {NotificationsComponent} from "./component/notifications/notifications.component";
+import {FormationComponent} from "./component/formation/formation.component";
+import {ChapitreComponent} from "./component/chapitre/chapitre.component";
 
 const routes: Routes = [
   {
@@ -28,9 +30,18 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
   },
+
+      {
+        path: 'formation',
+        component: FormationComponent,
+      },
       {
         path:'notif',
         component:NotificationsComponent
+      },
+      {
+        path:'chapitre/:id',
+        component:ChapitreComponent
       },
       {
     path: 'stat',

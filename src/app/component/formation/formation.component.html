@@ -1,0 +1,21 @@
+
+
+<app-headers></app-headers>
+
+<ion-content [fullscreen]="true" >
+  <ion-searchbar  debounce="100" name="Search" [(ngModel)]="Search"></ion-searchbar>
+
+  <div class="container"     *ngFor="let item of formation|formation:Search" (click)="goTochap(item._id)">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card card-1" style="  background-image: url({{imgUrl+item.urlimg}});">
+          <h3 style="color:#82B7EE">{{item.name}}</h3>
+          <h4 style="color:#82B7EE">{{item.nbrH}}h</h4>
+          <p style="color:#82B7EE">{{item.desc}}</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</ion-content>
