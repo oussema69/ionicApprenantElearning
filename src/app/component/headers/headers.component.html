@@ -1,12 +1,12 @@
 <ion-header [translucent]="true" >
   <ion-toolbar color="tertiary">
+
       <ion-icon name="log-out-outline" (click)="logout()" class="logout"></ion-icon>
 
 
     <ion-buttons  slot="end" style="position: fixed; right: 30%; top: 10%;" (click)="go()">
       <ion-badge mode="ios" style="position: fixed; right: 1%; top: 1%;" *ngIf="notification?.length>0">{{notification?.length}}</ion-badge>
         <ion-icon name="notifications-outline" (click)="updatevis()"></ion-icon>
-
     </ion-buttons>
     <ion-buttons  slot="end" style="position: fixed; right: 50%; top: 10%;">
       <ion-badge mode="ios" style="position: fixed; right: 1%; top: 1%;" >5</ion-badge>

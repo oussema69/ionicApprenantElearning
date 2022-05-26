@@ -18,16 +18,18 @@ import {NavbarComponent} from './component/navbar/navbar.component';
 import {NgCalendarModule} from 'ionic2-calendar';
 import {HeadersComponent} from './component/headers/headers.component';
 import {NotificationsComponent} from './component/notifications/notifications.component';
-import {ProfileComponent} from "./component/profile/profile.component";
-import {FormationComponent} from "./component/formation/formation.component";
-import {ChapitreComponent} from "./component/chapitre/chapitre.component";
-import {RessourceComponent} from "./component/ressource/ressource.component";
+import {ProfileComponent} from './component/profile/profile.component';
+import {FormationComponent} from './component/formation/formation.component';
+import {ChapitreComponent} from './component/chapitre/chapitre.component';
+import {RessourceComponent} from './component/ressource/ressource.component';
 import { FormationPipe } from './pipes/formation.pipe';
 import { ChapitrePipe } from './pipes/chapitre.pipe';
-
+import {FileOpener} from '@ionic-native/file-opener/ngx';
+import {ImageComponent} from './component/image/image.component';
+import {VideoComponent} from './component/video/video.component';
 @NgModule({
   declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,HeadersComponent,NotificationsComponent,ProfileComponent,FormationComponent,
-  ChapitreComponent,RessourceComponent, FormationPipe, ChapitrePipe],
+  ChapitreComponent,RessourceComponent, FormationPipe, ChapitrePipe,ImageComponent,VideoComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     BrowserModule,
@@ -42,7 +44,7 @@ import { ChapitrePipe } from './pipes/chapitre.pipe';
   ],
 
 
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, },FileOpener,],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

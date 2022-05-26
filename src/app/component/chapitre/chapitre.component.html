@@ -3,8 +3,6 @@
 
 
 <ion-content [fullscreen]="true">
-
-  <ion-searchbar  debounce="100" name="Search" [(ngModel)]="Search"></ion-searchbar>
   <div *ngIf="ch?.length===0">
   <img  src="../../../assets/undraw_No_data_re_kwbl.png">
     <h2 style="text-align: center">Aucun Chapitre</h2>
@@ -23,4 +21,9 @@
 
     </div>
   </div>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" >
+    <ion-fab-button >
+      <ion-icon name="return-up-back-outline" (click)="goToFormation()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

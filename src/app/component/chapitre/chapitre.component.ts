@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ChapitreService} from '../../services/chapitre.service';
 import {Chapitre} from '../../models/chapitre';
 
@@ -12,19 +12,24 @@ export class ChapitreComponent implements OnInit {
 id: string;
   ch: any;
   Search: string;
-  constructor(private route: ActivatedRoute,private service: ChapitreService) { }
+  constructor(private route: ActivatedRoute,private service: ChapitreService,private router: Router
+  ) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
     console.log(this.id,'id');
-    this.getchapitre(this.id)
+    this.getchapitre(this.id);
   }
  getchapitre(id: string){
   this.service.getch(id).subscribe(
     res=>{
       this.ch=res;
-      console.log('chapitrouwet',this.ch)
+      console.log('chapitrouwet',this.ch);
     }
   );
  }
+
+  goToFormation() {
+    this.router.navigate(['home/formation'])
+  }
 }

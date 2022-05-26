@@ -6,9 +6,11 @@ import {VisioComponent} from './component/visio/visio.component';
 import {RoomComponent} from './component/room/room.component';
 import {ProfileComponent} from './component/profile/profile.component';
 import {StatistiqueComponent} from './component/statistique/statistique.component';
-import {NotificationsComponent} from "./component/notifications/notifications.component";
-import {FormationComponent} from "./component/formation/formation.component";
-import {ChapitreComponent} from "./component/chapitre/chapitre.component";
+import {NotificationsComponent} from './component/notifications/notifications.component';
+import {FormationComponent} from './component/formation/formation.component';
+import {ChapitreComponent} from './component/chapitre/chapitre.component';
+import {ImageComponent} from './component/image/image.component';
+import {VideoComponent} from './component/video/video.component';
 
 const routes: Routes = [
   {
@@ -42,6 +44,15 @@ const routes: Routes = [
       {
         path:'chapitre/:id',
         component:ChapitreComponent
+      },
+
+      {
+        path:'img/:fic',
+        component:ImageComponent
+      },
+      {
+        path:'vid/:fic',
+        component:VideoComponent
       },
       {
     path: 'stat',

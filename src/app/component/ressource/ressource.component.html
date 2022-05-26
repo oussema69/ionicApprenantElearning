@@ -2,11 +2,12 @@
 
   <ion-item *ngFor="let i of ressource" [ngSwitch]="i.type">
     <ion-label >
-      <ion-icon name="document-outline" *ngSwitchCase="'application/pdf' "></ion-icon>
-      <ion-icon name="videocam-outline" *ngSwitchCase="'video/mp4'" ></ion-icon>
-      <ion-icon name="image-outline" *ngSwitchDefault></ion-icon>
+      <ion-icon name="document-outline" *ngSwitchCase="'application/pdf' " (click)="goTopdf(i.fic)"></ion-icon>
+      <ion-icon name="videocam-outline" *ngSwitchCase="'video/mp4'" (click)="goTovid(i.fic)"></ion-icon>
+      <ion-icon name="image-outline" *ngSwitchDefault (click)="goToimg(i.fic)"></ion-icon>
       {{i.titre}}
       <ion-icon name="cloud-download-outline" style="margin-left: 70%" (click)="download(i.fic)"></ion-icon>
     </ion-label>
   </ion-item>
 </ion-list>
+
