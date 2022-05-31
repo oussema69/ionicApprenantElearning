@@ -61,7 +61,7 @@ export class LoginComponent  {
             console.log(this.formateur);
           }
           if(this.formateur.data.isValid) {
-            this.router.navigate(['/home']);
+            this.router.navigate(['/home/stat']);
             console.log('sa7yt');
 //
 

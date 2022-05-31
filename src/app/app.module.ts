@@ -27,9 +27,10 @@ import { ChapitrePipe } from './pipes/chapitre.pipe';
 import {FileOpener} from '@ionic-native/file-opener/ngx';
 import {ImageComponent} from './component/image/image.component';
 import {VideoComponent} from './component/video/video.component';
+import {StatistiqueComponent} from "./component/statistique/statistique.component";
 @NgModule({
   declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,HeadersComponent,NotificationsComponent,ProfileComponent,FormationComponent,
-  ChapitreComponent,RessourceComponent, FormationPipe, ChapitrePipe,ImageComponent,VideoComponent],
+  ChapitreComponent,RessourceComponent, FormationPipe, ChapitrePipe,ImageComponent,VideoComponent,StatistiqueComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     BrowserModule,
