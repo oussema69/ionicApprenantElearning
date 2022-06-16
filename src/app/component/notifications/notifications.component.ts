@@ -19,7 +19,6 @@ export class NotificationsComponent implements OnInit {
       const decoded = jwt_decode(tokenuser);
 
       this.app=decoded;
-      console.log('ahawma',this.app.data._id);
     }
     this.getall(this.app.data._id);
   }
@@ -29,7 +28,6 @@ getall(idApp: string){
 
       this.notif=res;
 
-      console.log(this.notif);
     });
 }
 }

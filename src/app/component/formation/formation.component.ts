@@ -37,7 +37,6 @@ app: any;
       this.formationService.getById(i).subscribe(
         res=>{
           this.formation.push(res);
-          console.log('formationetna',this.formation);
         }
       );
     }

@@ -3,4 +3,6 @@ export class Chapitre  {
   name!: string;
   desc!: string;
   formation!: string;
+  visible: boolean;
+
 }

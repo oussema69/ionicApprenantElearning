@@ -38,7 +38,7 @@ logo:string;
     speed: 400
   };
    constructor(private appservice: ApprenantService,private fileservice:FileService) {
-   
+
 
    }
 
@@ -48,27 +48,23 @@ logo:string;
       const decoded = jwt_decode(tokenuser);
 
       this.app=decoded;
-      console.log('ahawma',this.app.data._id);
     }
     this.appservice.getappById(this.app.data._id).subscribe(
       res=>{
-        console.log('yamalasmerdouni',res);
         this.apprenant=res;
-        console.log('yamalasmermouchydouni',this.apprenant);
    this.name=this.apprenant.name
    this.lastname=this.apprenant.lastname
    this.email=this.apprenant.email
    this.password=this.apprenant.password
    this.tel=this.apprenant.tel
    this.apprenantup.logo=this.apprenant.logo
-        console.log(this.name,'nikomhom houma')
       }
     );
   }
   getuser(){
 
   }
- 
+
   onSubmit() {
     if(this.file==undefined){
      if(this.email==''||this.name.length==0||this.lastname.length==0||this.password.length<7||this.tel<100000000 &&this.tel>99999999){
@@ -103,7 +99,7 @@ this.fileservice.upload(this.file).subscribe(
         alert('champs mise a jour')
       }
     )
-  
+
   }
 )
       }

@@ -11,6 +11,8 @@ import {FormationComponent} from './component/formation/formation.component';
 import {ChapitreComponent} from './component/chapitre/chapitre.component';
 import {ImageComponent} from './component/image/image.component';
 import {VideoComponent} from './component/video/video.component';
+import {MessageComponent} from './component/message/message.component';
+import {MsgComponent} from "./component/msg/msg.component";
 
 const routes: Routes = [
   {
@@ -58,6 +60,15 @@ const routes: Routes = [
     path: 'stat',
     component: StatistiqueComponent,
   },
+      {
+        path: 'msg',
+        component: MessageComponent,
+      },
+      {
+        path: 'msgd/:id',
+        component: MsgComponent,
+      },
+
     ],
   },
   {

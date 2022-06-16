@@ -1,0 +1,45 @@
+<app-headers></app-headers>
+<ion-content [fullscreen]="true">
+
+  <div class="container" >
+    <div class="row">
+      <div class="col-lg-4 layout-spacing">
+        <div class="statbox widget box box-shadow">
+          <div class="widget-header">
+            <div class="row">
+              <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                <h4 class="pb-0 list-format-cls">Liste des formateurs</h4>
+               <!-- <span class="pb-0" style="    font-size: 1.5rem;font-weight: 700;margin-top:50px;">liste des Formateurs</span>-->
+
+              </div>
+            </div>
+          </div>
+          <div class="widget-content widget-content-area">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div id="content_2" class="tabcontent">
+                  <div class="story-container-2">
+                    <div class="single-story">
+
+                      <input type="text" class="search-format-cls" name="Search" [(ngModel)]="Search"  placeholder="Rechercher">
+
+
+                    </div>
+<app-listeformateur *ngFor="let i of form|formateur:Search" [form]="i">
+
+</app-listeformateur>
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ion-content>

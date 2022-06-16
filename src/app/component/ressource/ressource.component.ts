@@ -24,7 +24,6 @@ export class RessourceComponent implements OnInit {
 
   ngOnInit() {
     this.getch(this.chapitre._id);
-    console.log(this.chapitre, 'gggggggggggggggggggggggggggggggggggggggg');
     localStorage.setItem('idf',this.chapitre.formation);
 
   }
@@ -33,7 +32,6 @@ export class RessourceComponent implements OnInit {
     this.service.getByCh(id).subscribe(
       res => {
         this.ressource = res;
-        console.log('jjjjjj', res);
       }
     );
 
@@ -41,7 +39,6 @@ export class RessourceComponent implements OnInit {
 
   download(fic: any) {
     const path=this.api+'files/as/'+fic;
-    console.log('ya raby te5dem',path);
 window.open(path);
   }
 

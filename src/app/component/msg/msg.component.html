@@ -1,0 +1,62 @@
+<app-headers></app-headers>
+
+<ion-content [fullscreen]="true">
+
+<div class="chat">
+  <div class="chat-header clearfix">
+    <div class="row">
+      <div class="col-lg-6" style="box-shadow: 4px 3px 8px 1px #969696;
+    -webkit-box-shadow: 4px 3px 8px 1px #969696;
+    height: 50px;padding:6px">
+        <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+          <img style="    margin-top: 10px;" src="{{imgUrl+form?.logo}}" alt="avatar">
+
+        </a>
+        <h6 class="m-b-0" style="font-weight: 600;color:#82B7EE;">{{form?.name}} {{form?.lastname}}</h6>
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <div class="chat-history">
+      <ul class="m-b-0">
+        <div  *ngFor="let appr of messages">
+
+          <li class="clearfix" *ngIf="appr.ids===app.data?._id">
+            <div class="message-data">
+              <span class="message-data-time" style="margin-left: -20px;color:#82B7EE">{{appr.dates|date: 'dd/MM/yyyy'}},{{app.dates|date: 'shortTime'}}</span>
+            </div>
+            <div class="message my-message">{{appr.msg}}</div>
+          </li>
+
+          <li class="clearfix"  *ngIf="appr.ids!=app.data?._id">
+            <div class="message-data text-right" style="margin-left: 49%;">
+              <span class="message-data-time " style="color:#82B7EE">{{appr.dates|date: 'dd/MM/yyyy'}},{{app.dates|date: 'shortTime'}}</span>
+            </div>
+            <div class="message other-message float-right"> {{appr.msg}} </div>
+          </li>
+
+
+
+        </div>
+      </ul>
+    </div>
+    <div class="chat-message clearfix">
+      <div class="input-group mb-0">
+
+        <input style="  border-radius: 50px;font-size: .9375rem;padding:10px;background-color: transparent;width:
+  87%;background-color: #F2F3F5; border:1px solid #F2F3F5" type="text"
+               class="form-control" [(ngModel)]="msg" placeholder="Entrer votre message...">
+        <ion-icon (click)="send()" name="chevron-forward-circle-outline" style="color:blue;   vertical-align: middle; margin-top:1px;    font-size: 2.4rem;
+"></ion-icon>
+
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>

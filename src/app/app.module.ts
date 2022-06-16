@@ -27,10 +27,18 @@ import { ChapitrePipe } from './pipes/chapitre.pipe';
 import {FileOpener} from '@ionic-native/file-opener/ngx';
 import {ImageComponent} from './component/image/image.component';
 import {VideoComponent} from './component/video/video.component';
-import {StatistiqueComponent} from "./component/statistique/statistique.component";
+import {StatistiqueComponent} from './component/statistique/statistique.component';
+import {ChartsModule} from 'ng2-charts';
+import {GlobalstatComponent} from './component/chart/globalstat/globalstat.component';
+import {NombrformationComponent} from './component/chart/nombrformation/nombrformation.component';
+import {MessageComponent} from './component/message/message.component';
+import {MsgComponent} from './component/msg/msg.component';
+import { FormateurPipe } from './pipes/formateur.pipe';
+import {ListeformateurComponent} from './component/listeformateur/listeformateur.component';
 @NgModule({
-  declarations: [AppComponent,LoginComponent,HomeComponent,RoomComponent, SecurityPipe,NavbarComponent ,HeadersComponent,NotificationsComponent,ProfileComponent,FormationComponent,
-  ChapitreComponent,RessourceComponent, FormationPipe, ChapitrePipe,ImageComponent,VideoComponent,StatistiqueComponent],
+    declarations: [AppComponent, LoginComponent, HomeComponent, RoomComponent, SecurityPipe, NavbarComponent, HeadersComponent, NotificationsComponent, ProfileComponent, FormationComponent,
+        ChapitreComponent, RessourceComponent, FormationPipe,MessageComponent,MsgComponent,ListeformateurComponent,
+        ChapitrePipe, ImageComponent, VideoComponent, StatistiqueComponent, GlobalstatComponent, NombrformationComponent, FormateurPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     BrowserModule,
@@ -41,6 +49,7 @@ import {StatistiqueComponent} from "./component/statistique/statistique.componen
     CommonModule,
     PipesModule,
     NgCalendarModule,
+    ChartsModule
 
   ],
 

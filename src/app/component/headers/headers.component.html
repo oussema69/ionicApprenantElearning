@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" >
   <ion-toolbar color="tertiary">
-<img src="{{imgUrl+apprenant?.logo}}" class="img">
-    <span style="margin-left:20%;margin-top:5%;display:inline-block;"> {{apprenant?.name}} {{apprenant?.lastname}}</span>
+<img src="{{imgUrl+apprenant?.logo}}" class="img" (click)="reload()">
+    <span style="margin-left:20%;margin-top:5%;display:inline-block;" (click)="reload()"> {{apprenant?.name}} {{apprenant?.lastname}}</span>
       <ion-icon name="log-out-outline" (click)="logout()" class="logout"></ion-icon>
 
 
@@ -9,8 +9,8 @@
       <ion-badge mode="ios" style="position: fixed; right: 1%; top: 1%;" *ngIf="notification?.length>0">{{notification?.length}}</ion-badge>
         <ion-icon name="notifications-outline" (click)="updatevis()"></ion-icon>
     </ion-buttons>
-    <ion-buttons  slot="end" style="position: fixed; right: 30%; top: 13%;">
-      <ion-badge mode="ios" style="position: fixed; right: 1%; top: 1%;" >5</ion-badge>
+    <ion-buttons  slot="end" style="position: fixed; right: 30%; top: 13%;" (click)="gomsg()">
+      <ion-badge mode="ios" style="position: fixed; right: 1%; top: 1%;" *ngIf="msgnbr>0">{{msgnbr}}</ion-badge>
       <ion-icon name="chatbubble-outline"></ion-icon>
     </ion-buttons>
 

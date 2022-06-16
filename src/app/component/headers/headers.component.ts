@@ -6,6 +6,7 @@ import {NotificationsService} from '../../services/notifications.service';
 import {NotiDetailsService} from '../../services/noti-details.service';
 import {environment} from '../../../environments/environment';
 import {ApprenantService} from '../../services/apprenant.service';
+import {MessagesService} from '../../services/messages.service';
 
 @Component({
   selector: 'app-headers',
@@ -18,9 +19,10 @@ export class HeadersComponent implements OnInit {
   appre: any;
   notification: any;
   apprenant: any;
+  msgnbr: number;
   imgUrl = environment.Api + 'files/get/';
   constructor(private router: Router,private Nservice: NotificationsService,
-              private notifDeteils: NotiDetailsService,private appservice: ApprenantService
+              private notifDeteils: NotiDetailsService,private appservice: ApprenantService,private msgservice: MessagesService
               ) { }
 
   ngOnInit() {
@@ -29,10 +31,14 @@ export class HeadersComponent implements OnInit {
       const decoded = jwt_decode(tokenuser);
 
       this.appre = decoded;
-      console.log('ahawma', this.appre.data._id);
     }
-    this.getappById(this.appre.data._id)
+    this.getappById(this.appre.data._id);
     this.getByvisibility();
+    this.msgservice.countbyform(this.appre.data._id).subscribe(res=>{
+      this.msgnbr=res;
+      console.log(this.msgnbr);
+      console.log('omamamamam');
+    });
   }
   logout() {
     const tokenuser=localStorage.getItem('mhatlioussema');
@@ -61,24 +67,34 @@ this.Nservice.getNotifToken(this.app.data._id).subscribe(res=>{
 
   updatevis() {
    this.notifDeteils.updateVis(this.appre.data._id).subscribe(res=>{
-     console.log('selket');
      this.getByvisibility();
    });
   }
   getByvisibility(){
     this.notifDeteils.getByvis(this.appre.data._id).subscribe(res=>{
-      console.log('ahaya',res);
       this.notification=res;
-      console.log('toul',this.notification.length);
     });
   }
   getappById(id: string){
 this.appservice.getById(id).subscribe(
   res=>{
     this.apprenant=res;
-    console.log(this.apprenant,'urhfeourjjjjjjjjjjjjjjjjjjjjjjj')
 
   }
 );
   }
+
+  gomsg() {
+    this.router.navigate(['home/msg']);
+this.updatevismsg();
+  }
+
+  reload() {
+    window.location.reload();
+
+  }
+  updatevismsg() {
+
+  }
+
 }

@@ -1,30 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import {Label} from 'ng2-charts';
-import jwt_decode from 'jwt-decode';
-import {StatistiqueService} from '../../services/statistique.service';
+import {StatistiqueService} from '../../../services/statistique.service';
+import jwt_decode from "jwt-decode";
 
 @Component({
-  selector: 'app-statistique',
-  templateUrl: './statistique.component.html',
-  styleUrls: ['./statistique.component.scss'],
+  selector: 'app-nombrformation',
+  templateUrl: './nombrformation.component.html',
+  styleUrls: ['./nombrformation.component.scss'],
 })
-export class StatistiqueComponent implements OnInit {
+export class NombrformationComponent implements OnInit {
+app:any
   year=2022;
-app: any;
-a: number;
+  a!: number;
+
+  public barChartType: ChartType = 'bar';
+
   constructor(private statservice: StatistiqueService) { }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
     const tokenuser=localStorage.getItem('mhatlioussema');
     if(tokenuser) {
       const decoded = jwt_decode(tokenuser);
 
       this.app=decoded;
     }
-    this.get();
+    this.get()
   }
+
   get() {
     this.year=this.year;
     this.barChartData[0].data=[];
@@ -34,7 +37,7 @@ a: number;
 
 
 
-      this.statservice.getformbyappmonth(i,this.year,this.app.data._id).subscribe(res=>{
+      this.statservice.getvisiobyappmonth(i,this.year,this.app.data._id).subscribe(res=>{
         this.a=res;
         this.barChartData[0].data?.push( this.a);
 
@@ -48,15 +51,10 @@ a: number;
     responsive: true,
   };
   barChartLabels: Label[] = ['janvier', 'février', 'mars', 'avril', 'mai','juin','juillet','aout','septembre','octrobre','novembre','decembre'];
-  barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
 
   barChartData: ChartDataSets[] = [
-    { data: [], label: 'formation' }
+    { data: [], label: 'visioconférence ' }
   ];
-
-
-
-
 }

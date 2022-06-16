@@ -1,0 +1,10 @@
+<div class="single-story hay"  (click)="consulter()">
+  <div class="story-dp unseen">
+    <img src="{{imgUrl+form.logo}}" style="width:20px">
+  </div>
+  <div class="story-author lay">
+    <p class="name" style="color:#82B7EE">  {{form.name}} {{form.lastname}}
+     <span style="color: red" *ngIf="countmsg>0">{{countmsg}}</span>
+    </p>
+  </div>
+</div>

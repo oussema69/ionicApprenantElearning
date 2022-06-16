@@ -16,7 +16,6 @@ export class VisioComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
     this.meet=this.meet+this.id;
-    console.log('lid mta3 zeby',this.meet);
     this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.meet);
   }
 

@@ -8,7 +8,7 @@
     <h2 style="text-align: center">Aucun Chapitre</h2>
   </div>
   <div class="container"  *ngFor="let item of ch|chapitre:Search;index as i"  >
-    <div class="row">
+    <div class="row" *ngIf="item.visible">
       <div class="col-md-4">
         <div class="card card-1 row host" >
           <h2 style="color: #82B7EE"><ion-icon name="folder-outline"></ion-icon> chapitre{{i+1}}: {{item.name}}</h2>

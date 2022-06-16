@@ -58,15 +58,12 @@ export class LoginComponent  {
             const decoded = jwt_decode(token);
 
             this.formateur=decoded;
-            console.log(this.formateur);
           }
           if(this.formateur.data.isValid) {
             this.router.navigate(['/home/stat']);
-            console.log('sa7yt');
 //
 
 
-            console.log('Initializing HomePage');
 
             // Request permission to use push notifications
             // iOS will prompt user and return if they granted permission or not
@@ -89,13 +86,11 @@ export class LoginComponent  {
                   const decoded = jwt_decode(tokenuser);
 
                   this.app=decoded;
-                  console.log('ahawma',this.app.data._id);
                 }
                 this.notif.token=token.value;
                 this.notif.idApp=this.app.data._id;
                 this.Nservice.createNotifcation(this.notif).subscribe(
                   res=>{
-                    console.log('jet');
                   }
                 );
               }

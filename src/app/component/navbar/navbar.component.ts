@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {IonTabs} from "@ionic/angular";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,7 @@ export class NavbarComponent implements OnInit {
   @ViewChild('tabs', {static: false}) tabs: IonTabs;
   selectedTab: any;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
 
@@ -21,5 +22,6 @@ export class NavbarComponent implements OnInit {
   setCurrentTab() {
     this.selectedTab = this.tabs.getSelected();
   }
+
 
 }

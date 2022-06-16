@@ -17,14 +17,12 @@ id: string;
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    console.log(this.id,'id');
     this.getchapitre(this.id);
   }
  getchapitre(id: string){
   this.service.getch(id).subscribe(
     res=>{
       this.ch=res;
-      console.log('chapitrouwet',this.ch);
     }
   );
  }

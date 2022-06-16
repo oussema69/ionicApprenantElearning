@@ -18,7 +18,6 @@ fic: string;
 
   goToForm() {
     const idf=localStorage.getItem('idf')
-    console.log(idf,'localstorage')
     this.router.navigate(['home/chapitre/'+idf])
   }
 }
